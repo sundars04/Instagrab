@@ -1,8 +1,6 @@
 %h1= @pic.title
 %p= simple_format(@pic.description)
-%p
-Pic by
-= @pic.user.email
+%p Pic by #{@pic.user.email}
 
 %br
 

@@ -7,7 +7,30 @@
   = csrf_meta_tags
 
 %body
-  - flash.each do |name, msg|
-    =content_tag :div, msg, class: 'alert alert-info'
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .containter
+      .navbar-header
+        %button.navbar-toggle.collapsed{ type: :button, 'data-toggle' => :collapse, 'data-target' => "#bs-example-navbar-collapse-1" }
+          %span.sr-only Toggle Navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to 'InstaGrab', root_path, class: 'navbar-brand'
 
-  = yield
+      / Navbar content
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        - if user_signed_in?
+          %ul.nav.navbar-nav.navbar-right            
+            %li= link_to "Grab It", new_pic_path
+            %li= link_to "Settings", edit_user_registration_path
+            %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+        - else
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "Join Now", new_user_registration_path
+            %li= link_to "Log In", new_user_session_path
+
+  .container
+    - flash.each do |name, msg|
+      =content_tag :div, msg, class: "alert alert-info"
+
+    = yield
