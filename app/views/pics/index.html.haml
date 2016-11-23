@@ -1,1 +1,5 @@
-%h1 This is the root path
+- @pics.each do |pic|
+  %h2= link_to pic.title
+
+= link_to "Grabb It", new_pic_path
+
