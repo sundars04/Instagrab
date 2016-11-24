@@ -15,7 +15,8 @@ gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise'
 gem 'paperclip'
-
+gem 'masonry-rails'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
