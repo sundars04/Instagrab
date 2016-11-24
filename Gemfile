@@ -17,6 +17,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'aws-sdk', '~> 2.6', '>= 2.6.28'
 
 group :development, :test do
   gem 'byebug', platform: :mri
