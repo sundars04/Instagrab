@@ -76,7 +76,9 @@ nav {
 
       a {
         color: #529ECC;
-
+        &:hover {
+        text-decoration: none;
+        }
       }
     }
   }
